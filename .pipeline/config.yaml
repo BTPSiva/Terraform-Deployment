@@ -32,15 +32,6 @@ steps:
     mtaDeployParameters: "-f --version-rule ALL"
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
-  Init:
-      script: |
-    #set BTP_USERNAME=perabathula.nagasiva@sap.com
-    #set BTP_PASSWORD=Allgodsofmexico27
-    echo Terraform code is started deploying.
-    echo executing the Terraform code in SAP BTP.......
-    terraform --version
-    terraform init
-    terraform plan
 
 
   
