@@ -12,7 +12,6 @@ steps:
       shell: bash
       script: |
         echo "🚀 Running Terraform Init"
-        cd terraform
         terraform init
 
   Plan:
@@ -20,7 +19,6 @@ steps:
       shell: bash
       script: |
         echo "📐 Running Terraform Plan"
-        cd terraform
         terraform plan -out=tfplan
 
   Apply:
@@ -28,5 +26,4 @@ steps:
       shell: bash
       script: |
         echo "⚙️ Applying Terraform"
-        cd terraform
         terraform apply -auto-approve tfplan
