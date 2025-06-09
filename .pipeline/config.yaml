@@ -32,11 +32,6 @@ steps:
     mtaDeployParameters: "-f --version-rule ALL"
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
-
-# Stages configuration
-stages:
-  Init:
-
 steps:
   Init:
       script: |
