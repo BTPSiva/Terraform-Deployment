@@ -32,7 +32,6 @@ steps:
     mtaDeployParameters: "-f --version-rule ALL"
   artifactPrepareVersion:
     versioningType: "cloud_noTag"
-steps:
   Init:
       script: |
     #set BTP_USERNAME=perabathula.nagasiva@sap.com
