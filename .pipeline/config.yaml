@@ -1,9 +1,24 @@
-- script: |
-    set BTP_USERNAME=perabathula.nagasiva@sap.com
-    set BTP_PASSWORD=Allgodsofmexico27
-    echo Terraform code is started deploying.
-    echo executing the Terraform code in SAP BTP.......
-    terraform --version
-    terraform init
-    terraform plan
-    terraform apply -auto-approve
+stages:
+  - name: TerraformInit
+  - name: TerraformPlan
+  - name: TerraformApply
+
+steps:
+  TerraformInit:
+    runSh:
+      shell: bash
+      script: |
+        terraform init
+
+  TerraformPlan:
+    runSh:
+      shell: bash
+      script: |
+        terraform plan -out=tfplan
+
+  TerraformApply:
+    runSh:
+      shell: bash
+      script: |
+        terraform apply -auto-approve tfplan
+
