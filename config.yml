@@ -1,0 +1,27 @@
+# Project configuration
+general:
+  buildTool: "mta"                                                # "mta", "npm", or "maven" (default: "mta")
+
+service:
+  buildToolVersion: "MBTJ21N22"                                    # depends on buildTool value, see the following table
+
+
+# Stages configuration
+stages:
+  - name: Init
+
+steps:
+  Init:
+    runSh:
+      shell: bash
+      script: |
+    #set BTP_USERNAME=perabathula.nagasiva@sap.com
+    #set BTP_PASSWORD=Allgodsofmexico27
+    echo Terraform code is started deploying.
+    echo executing the Terraform code in SAP BTP.......
+    terraform --version
+    terraform init
+    terraform plan
+
+
+  
