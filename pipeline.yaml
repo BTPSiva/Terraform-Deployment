@@ -1,10 +1,5 @@
 trigger:
-- development
-
-pool:
-  name: BTPAgent
-  demands:
-   - Terraform -equals Yes
+- main
 
 steps:
 - script: echo Hello, world!
