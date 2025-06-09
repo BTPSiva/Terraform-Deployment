@@ -1,24 +1,26 @@
 stages:
-  - name: TerraformInit
-  - name: TerraformPlan
-  - name: TerraformApply
+  - name: Init
+  - name: Plan
+  - name: Apply
 
 steps:
-  TerraformInit:
+  Init:
     runSh:
       shell: bash
       script: |
+        echo "Running Init"
         terraform init
 
-  TerraformPlan:
+  Plan:
     runSh:
       shell: bash
       script: |
+        echo "Planning"
         terraform plan -out=tfplan
 
-  TerraformApply:
+  Apply:
     runSh:
       shell: bash
       script: |
+        echo "Applying"
         terraform apply -auto-approve tfplan
-
