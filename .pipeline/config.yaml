@@ -1,0 +1,30 @@
+---
+stages:
+  - name: Init
+  - name: Plan
+  - name: Apply
+
+steps:
+  Init:
+    runSh:
+      shell: bash
+      script: |
+        cd \Users\I746211\Documents\DevOps\Terraform_BTP\Automations_Realtime_work\Terraform-Deployment
+        terraform init
+
+  Plan:
+    runSh:
+      shell: bash
+      script: |
+        cd \Users\I746211\Documents\DevOps\Terraform_BTP\Automations_Realtime_work\Terraform-Deployment
+        terraform plan -out=tfplan
+
+  Apply:
+    runSh:
+      shell: bash
+      script: |
+        cd \Users\I746211\Documents\DevOps\Terraform_BTP\Automations_Realtime_work\Terraform-Deployment
+        terraform apply -auto-approve tfplan
+
+
+  
