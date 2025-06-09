@@ -11,19 +11,22 @@ steps:
     runSh:
       shell: bash
       script: |
-        echo "Running Init"
+        echo "🚀 Running Terraform Init"
+        cd terraform
         terraform init
 
   Plan:
     runSh:
       shell: bash
       script: |
-        echo "Planning"
+        echo "📐 Running Terraform Plan"
+        cd terraform
         terraform plan -out=tfplan
 
   Apply:
     runSh:
       shell: bash
       script: |
-        echo "Applying"
+        echo "⚙️ Applying Terraform"
+        cd terraform
         terraform apply -auto-approve tfplan
