@@ -1,3 +1,6 @@
+general:
+  verbose: true
+
 stages:
   - name: Init
   - name: Plan
