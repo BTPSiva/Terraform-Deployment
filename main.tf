@@ -1,6 +1,6 @@
 resource "btp_subaccount" "my_subaccount" {
-  name      = "devopstesting"
-  subdomain = "devopstesting"
+  name      = "joule"
+  subdomain = "joule"
   region    = "us10"
 }
 
