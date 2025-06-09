@@ -1,5 +1,4 @@
-general:
-  verbose: true
+dockerImage: "hashicorp/terraform:1.6.6"
 
 stages:
   - name: Init
@@ -11,19 +10,22 @@ steps:
     runSh:
       shell: bash
       script: |
-        echo "🚀 Running Terraform Init"
+        echo "🚀 Init Stage Started"
+        pwd
+        ls -la
+        terraform version || { echo "❌ Terraform not found"; exit 1; }
         terraform init
 
   Plan:
     runSh:
       shell: bash
       script: |
-        echo "📐 Running Terraform Plan"
+        echo "📦 Planning Infrastructure"
         terraform plan -out=tfplan
 
   Apply:
     runSh:
       shell: bash
       script: |
-        echo "⚙️ Applying Terraform"
+        echo "🚀 Applying Infrastructure"
         terraform apply -auto-approve tfplan
