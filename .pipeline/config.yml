@@ -1,13 +1,1 @@
-dockerImage: "hashicorp/terraform:1.6.6"
 
-stages:
-  - name: Init
-
-steps:
-  Init:
-    runSh:
-      shell: bash
-      script: |
-        echo "Starting Init stage"
-        terraform version
-        terraform init
