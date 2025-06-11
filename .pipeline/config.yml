@@ -6,9 +6,6 @@ steps:
     runSh:
       shell: bash
       script: |
-    echo Terraform code is started deploying.
-    echo executing the Terraform code in SAP BTP.......
-    terraform --version
-    terraform init
-    terraform plan
-    terraform apply -auto-approve
+        echo "Verifying Terraform installation..."
+        terraform version || echo "Terraform is NOT installed"
+    
