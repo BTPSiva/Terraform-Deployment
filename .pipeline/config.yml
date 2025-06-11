@@ -6,6 +6,11 @@ steps:
     runSh:
       shell: bash
       script: |
-        echo "Starting Init stage"
-        terraform version
-        terraform init
+    set BTP_USERNAME=perabathula.nagasiva@sap.com
+    set BTP_PASSWORD=Allgodsofmexico27
+    echo Terraform code is started deploying.
+    echo executing the Terraform code in SAP BTP.......
+    terraform --version
+    terraform init
+    terraform plan
+    terraform apply -auto-approve
